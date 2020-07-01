@@ -16,7 +16,7 @@ Informe no campo abaixo a URL da sua imagem no Docker Hub.
 
 Não se esqueça que também temos um canal na comunidade criada no Discord para debater exatamente esse desafio.
 
-## Minhas referênicas
+## Minhas referências
 
 * https://gobuffalo.io/en/docs/getting-started/installation
 * https://gobuffalo.io/en/docs/getting-started/new-project
