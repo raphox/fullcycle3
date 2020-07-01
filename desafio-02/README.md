@@ -27,8 +27,10 @@ Não se esqueça que também temos um canal na comunidade criada no Discord para
 
 ## Criando o código fonte da aplicação
 
+```bash
 docker run -v $PWD:/src gobuffalo/buffalo buffalo new app --vcs none --skip-pop -f
 sudo chown -R $USER:$USER app
+```
 
 ## Executando
 
