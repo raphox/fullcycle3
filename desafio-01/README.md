@@ -17,7 +17,7 @@ OBS: Caso você não tenha experiência com Docker ou com Golang, recomendamos o
 
 Não se esqueça que também temos um canal na comunidade criada no Discord para debater exatamente esse desafio.
 
-## Minhas referênicas
+## Minhas referências
 
 * https://www.callicoder.com/docker-golang-image-container-example/
 * https://docs.docker.com/engine/reference/builder
