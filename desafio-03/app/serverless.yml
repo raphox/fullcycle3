@@ -1,3 +1,6 @@
+org: raphoxaraujo
+app: my-first-app
+
 # Welcome to Serverless!
 #
 # This file is the main config file for your service.
@@ -23,6 +26,10 @@ functions:
     handler: handler.hello
   soma:
     handler: handler.soma
+    events: # All events associated with this function
+      - http:
+          path: soma
+          method: get
 
 # extend the framework using plugins listed here:
 # https://github.com/serverless/plugins
