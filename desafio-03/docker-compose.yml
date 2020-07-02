@@ -1,0 +1,8 @@
+version: '3'
+services:
+  serveless:
+    build: .
+    volumes:
+      - ./app:/src/app
+    environment:
+        - SLS_DEBUG=*
