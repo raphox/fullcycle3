@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+{% if lesson_list %}
+    {% for lesson in lesson_list %}
+    <article class="col-12 col-lg-6">
+        <a {% if lesson.is_past_due %}href="{% url 'lessons:detail' lesson.id %}"{% endif %} title="{{ lesson.title }}" class="box {{ lesson.is_past_due|yesno:'activate,disabled' }}">
+            <div class="content">
+                {% with "lessons/images/"|add:lesson.thumbnail as thumbnail %}
+                    <img src="{% static thumbnail %}" alt="{{ lesson.title }}" class="img-fluid">
+                {% endwith %}
+
+                <div class="content-title">
+                    <h2>{{ lesson.title }}</h2>
+
+                    <div class="info">
+                        <p>
+                            <span class="icon-m-play2"></span>
+                            {% if lesson.is_past_due %}
+                                Assistir
+                            {% else %}
+                                Disponível em
+                            {% endif %}
+
+                        </p>
+                        <p>
+                            <span class="icon-m-fullcycle"></span>
+                            {{ lesson.publicated_at|date:"d/m" }}
+                            {% if lesson.is_past_due %}
+                                <span class="in-ar">No ar</span>
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </article>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhuma aula disponível.</p>
+{% endif %}
+{% endblock %}
