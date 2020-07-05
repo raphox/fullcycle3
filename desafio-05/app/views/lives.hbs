@@ -1,0 +1,83 @@
+{{#if lives.today}}
+{{{lives.today}}}
+    <section class="live-main">
+        <div class="container">
+            <h1>Live de hoje</h1>
+            <div class="row">
+                {{#with lives.today}}
+                <article class="col-12">
+                    <a href="/maratona/{{{id}}}" title="" class="box">
+                        <div class="content">
+                            <img src="/images/{{{thumbnail}}}" alt="{{{title}}}" class="img-fluid">
+
+                            <div class="content-title">
+                                <div class="info-title">
+                                    <h2>{{{title}}}</h2>
+                                    <span class="participants">{{{guests}}}</span>
+                                    <p>{{{description}}}</p>
+                                </div>
+
+                                <div class="info">
+                                    <p>
+                                        <span class="icon-m-play2"></span>
+                                        Assistir
+                                    </p>
+                                    <p>
+                                        <span class="icon-m-fullcycle"></span>
+                                        {{{day}}}
+                                        <span class="hour"><span class="icon-m-relogio1"></span> {{{hour}}}h</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                {{/with}}
+            </div>
+        </div>
+    </section>
+{{/if}}
+
+<section class="lives">
+    <div class="container">
+        <h1>Próximas lives</h1>
+
+        <div class="row">
+            {{#each lives.allNext}}
+                {{>live}}
+            {{else}}
+                <article class="col-12">
+                    <a title="" class="box">
+                        <div class="content">
+                            <div class="content-title">
+                                <h2>Não existe live nessa categoria</h2>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            {{/each}}
+        </div>
+    </div>
+</section>
+
+<section class="lives">
+    <div class="container">
+        <h1>Lives Anteriores</h1>
+
+        <div class="row">
+            {{#each lives.allPrevious}}
+                {{>live}}
+            {{else}}
+                <article class="col-12">
+                    <a title="" class="box">
+                        <div class="content">
+                            <div class="content-title">
+                                <h2>Não existe live nessa categoria</h2>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            {{/each}}
+        </div>
+    </div>
+</section>

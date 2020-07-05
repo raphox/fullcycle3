@@ -1,0 +1,32 @@
+<article class="col-12 col-lg-6">
+    <a href="/maratona/{{{id}}}" title="" class="box">
+        <div class="content">
+            <img src="/images/{{{thumbnail}}}" alt="{{{title}}}" class="img-fluid">
+
+            <div class="content-title">
+                <div class="next-title">
+                    <h2>{{{title}}}</h2>
+                    <p class="participants">{{{guests}}}</p>
+                </div>
+
+                <div class="info">
+                    {{#if is_past_due}}
+                        <p>
+                            <span class="icon-m-play2"></span>
+                            Assistir
+                        </p>
+                    {{else}}
+                        <p>
+                            <span class="icon-m-fullcycle"></span>
+                            Disponível em {{{day}}}
+                        </p>
+
+                        <p>
+                            <span class="hour"><span class="icon-m-relogio1"></span> {{{hour}}}h</span>
+                        </p>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </a>
+</article>
